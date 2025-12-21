@@ -48,4 +48,3 @@ fn verify_with<DH: Dh, EKEM: Kem, SKEM: Kem, C: Cipher, H: Hash>(data: &[u8]) {
         }
     }
 }
-

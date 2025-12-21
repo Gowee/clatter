@@ -6,7 +6,7 @@ use clatter::crypto::dh::X25519;
 use clatter::crypto::hash::{Blake2b, Blake2s, Sha256, Sha512};
 use clatter::crypto::kem::pqclean_ml_kem::MlKem1024;
 use clatter::crypto::kem::rust_crypto_ml_kem::MlKem512;
-use clatter::traits::{Cipher, Dh, Hash, Handshaker, Kem};
+use clatter::traits::{Cipher, Dh, Handshaker, Hash, Kem};
 use clatter_fuzz::{hybrid_handshake_patterns, setup_hybrid_handshake};
 use libfuzzer_sys::fuzz_target;
 
@@ -38,4 +38,3 @@ fn verify_with<DH: Dh, EKEM: Kem, SKEM: Kem, C: Cipher, H: Hash>(data: &[u8]) {
         let _ = bob.read_message(data, &mut bob_buf);
     }
 }
-

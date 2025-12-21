@@ -2,7 +2,7 @@
 
 use clatter::constants::MAX_MESSAGE_LEN;
 use clatter::handshakepattern::*;
-use clatter::traits::{Cipher, Dh, Hash, Handshaker, Kem};
+use clatter::traits::{Cipher, Dh, Handshaker, Hash, Kem};
 use clatter::transportstate::TransportState;
 use clatter::{HybridHandshake, HybridHandshakeParams, NqHandshake, PqHandshake};
 
@@ -198,7 +198,10 @@ pub fn setup_pq_handshake<EKEM: Kem, SKEM: Kem, C: Cipher, H: Hash>(
 /// Setup hybrid handshake pair
 pub fn setup_hybrid_handshake<DH: Dh, EKEM: Kem, SKEM: Kem, C: Cipher, H: Hash>(
     pattern: &HandshakePattern,
-) -> (HybridHandshake<DH, EKEM, SKEM, C, H>, HybridHandshake<DH, EKEM, SKEM, C, H>) {
+) -> (
+    HybridHandshake<DH, EKEM, SKEM, C, H>,
+    HybridHandshake<DH, EKEM, SKEM, C, H>,
+) {
     let alice_dh_keys = DH::genkey().unwrap();
     let alice_dh_pub = alice_dh_keys.public.clone();
     let bob_dh_keys = DH::genkey().unwrap();
@@ -262,5 +265,3 @@ pub fn complete_handshake<A: Handshaker<C, H>, B: Handshaker<C, H>, C: Cipher, H
 
     (alice_transport, bob_transport)
 }
-
-

@@ -4,7 +4,7 @@ use clatter::constants::MAX_MESSAGE_LEN;
 use clatter::crypto::cipher::{AesGcm, ChaChaPoly};
 use clatter::crypto::dh::X25519;
 use clatter::crypto::hash::{Blake2b, Blake2s, Sha256, Sha512};
-use clatter::traits::{Cipher, Dh, Hash, Handshaker};
+use clatter::traits::{Cipher, Dh, Handshaker, Hash};
 use clatter_fuzz::{nq_handshake_patterns, setup_nq_handshake};
 use libfuzzer_sys::fuzz_target;
 
