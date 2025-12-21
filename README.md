@@ -27,7 +27,7 @@ huge thanks to the developers for their effort!
 crypto primitives incorporated to provide additional security in case of a catastrophic flaw in the post-quantum algorithms.
 Clatter provides:
 
-  * [`HybridHandshake`](https://docs.rs/clatter/latest/clatter/struct.HybridHandshake.html) - *true hybrid* handshake which combines both DH and KEM operations in the same handshake messages.
+  * [`HybridHandshake`](https://docs.rs/clatter/latest/clatter/type.HybridHandshake.html) - *true hybrid* handshake which combines both DH and KEM operations in the same handshake messages.
   * [`HybridDualLayerHandshake`](https://docs.rs/clatter/latest/clatter/struct.HybridDualLayerHandshake.html) - *outer-encrypts-inner* style piped handshake with cryptographic binding between the layers.
   * [`DualLayerHandshake`](https://docs.rs/clatter/latest/clatter/struct.DualLayerHandshake.html) - *outer-encrypts-inner* style piped handshake with fully independent layers.
 
