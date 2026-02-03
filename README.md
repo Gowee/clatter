@@ -156,7 +156,10 @@ of classic algorithms - all with minimal effect to the number of round trips per
 Clatter provides hybrid versions of the most commonly used Noise handshake patterns in the [`handshakepattern`](https://docs.rs/clatter/latest/clatter/handshakepattern/index.html)
 module. These hybrid pattern variables are named as `noise_hybrid_<pattern>_...` and are essentially combined versions of the respective
 NQ and PQ handshake patterns. Each handshake interaction will complete the operations of both the NQ and PQ patterns and the hybrid
-pattern is constructed in a way which preserves the relative ordering of `DH` and `KEM` operations with respect to key material transmissions.
+pattern is constructed in a way which preserves the relative order of the NQ pattern tokens and injects the PQ pattern tokens by
+following the ordering rule stated by PQNoise:
+
+> Within a message `ekem` always precedes `skem` which always precedes all public keys and the payload.
 
 #### Tokens `e` and `s` handling
 
